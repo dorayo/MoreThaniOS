@@ -1,4 +1,4 @@
 MoreThaniOS
 ===========
 
-More Than iOS
+More Than iOS By dorayo weiji.info
