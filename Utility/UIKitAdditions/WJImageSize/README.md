@@ -6,7 +6,7 @@
 ##Demo
 	
 ```
-	[ImageSize calculateImageSizeWithURLString:@"http://pic12.nipic.com/20110118/1295091_171039317000_2.pn" success:^(CGSize imageSize) {
+	[ImageSize calculateImageSizeWithURLString:@"http://pic12.nipic.com/20110118/1295091_171039317000_2.png" success:^(CGSize imageSize) {
         NSLog(@"%@",NSStringFromCGSize(imageSize));
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
