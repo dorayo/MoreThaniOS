@@ -20,4 +20,8 @@
 + (NSString *)pathStringByAppending:(NSString *)str;
 @end
 
+@interface NSString (FileName)
+- (NSString *)fileNameByAppend:(NSString *)append;
+@end
+
 

@@ -48,3 +48,23 @@
 
 @end
 
+@implementation NSString (FileName)
+
+- (NSString *)fileNameByAppend:(NSString *)append
+{
+    // 1. 获取不带扩展名的文件名
+    NSString *baseName = [self stringByDeletingPathExtension];
+    
+    // 2. 在baseName上追加字符串
+    baseName = [baseName stringByAppendingString:append];
+    
+    // 3. 取出扩展名
+    NSString *extension = [self pathExtension];
+    
+    // 4. 拼接成新的文件名
+    return [baseName stringByAppendingPathExtension:extension];
+}
+
+@end
+
+
