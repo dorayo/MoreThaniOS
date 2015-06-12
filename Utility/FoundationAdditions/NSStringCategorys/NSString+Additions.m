@@ -13,7 +13,7 @@
 
 @implementation NSString (URLEncode)
 
-- (NSString *)stringByEncodeToPercentEscape
+- (NSString *)urlStringByEncodeToPercentEscape
 {
     NSString *encodedString = (NSString *)
     CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
@@ -24,7 +24,7 @@
     return encodedString;
 }
 
-- (NSString *)stringByDecodeFromPercentEscape
+- (NSString *)urlStringByDecodeFromPercentEscape
 {
     NSMutableString *decodedString = [NSMutableString stringWithString:self];
     [decodedString replaceOccurrencesOfString:@"+"

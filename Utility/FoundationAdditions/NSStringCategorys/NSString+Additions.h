@@ -12,8 +12,8 @@
 @end
 
 @interface NSString (URLEncode)
-- (NSString *)stringByEncodeToPercentEscape;
-- (NSString *)stringByDecodeFromPercentEscape;
+- (NSString *)urlStringByEncodeToPercentEscape;
+- (NSString *)urlStringByDecodeFromPercentEscape;
 @end
 
 @interface NSString (DocumentPath)
