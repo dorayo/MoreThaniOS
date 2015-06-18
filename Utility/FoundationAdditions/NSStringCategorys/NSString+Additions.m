@@ -67,4 +67,59 @@
 
 @end
 
+#pragma mark - Personal Infos Validation
+@implementation NSString (PersonalInfoValidation)
+
++(BOOL)isMatchesRegularExpression:(NSString *)string byExpression:(NSString *)regex
+
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    return [predicate evaluateWithObject:string];
+    
+}
+
+
+- (BOOL)isValidMobilePhoneNumber
+{
+    NSString *mobileRegex =  @"^1(3[0-9]|4[57]|5[0-35-9]|7[78]|8[0-9])\\d{8}$";
+    
+    return [NSString isMatchesRegularExpression:self byExpression:mobileRegex];
+}
+
+- (MobilePhoneNumberType)mobilePhoneNumberType
+{
+    NSString *CMRegex = @"^1(34[0-8]|(3[5-9]|47|5[0-27-9]|78|8[2-478])[0-9])[0-9]{7}$";
+    NSString *CURegex = @"^1(3[0-2]|45|5[56]|76|8[56])[0-9]{8}$";
+    
+    if (![NSString isMatchesRegularExpression:self byExpression:CMRegex]) {
+        NSLog(@"Unkown Mobile Phone Number Type!");
+        return MobilePhoneNumberTypeUnknown;
+    }
+    
+    MobilePhoneNumberType type = MobilePhoneNumberTypeUnknown;
+    
+    if ([NSString isMatchesRegularExpression:self byExpression:CMRegex]) {
+        NSLog(@"China Mobile");
+        type = MobilePhoneNumberTypeCM;
+    } else if ([NSString isMatchesRegularExpression:self byExpression:CURegex]) {
+        NSLog(@"China Unicom");
+        type = MobilePhoneNumberTypeCU;
+    } else {
+        NSLog(@"China Telecom");
+        type = MobilePhoneNumberTypeCT;
+    }
+    
+    return type;
+}
+
+- (BOOL)isValidEmailAddress
+{
+    NSString *emailRegex = @"[A-Za-z0-9._%+-]{3,}@[A-Za-z0-9.-]+\\.[A-Za-z]+";
+    return [NSString isMatchesRegularExpression:self byExpression:emailRegex];
+}
+
+@end
+
+
 
