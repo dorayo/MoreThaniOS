@@ -18,4 +18,9 @@
  * 以上代码，将main bundle的abc目录下的123.jpg生成了不缓存的UIImage对象
  */
 
+// 03.屏幕宽度、高度宏
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+#define kScreenH [UIScreen mainScreen].bounds.size.height
+
+
 #endif
