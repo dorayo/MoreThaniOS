@@ -8,7 +8,7 @@
 
 #import "UITableViewAdditional.h"
 
-@implementation UITableView (Addtional)
+@implementation UITableView (Index)
 
 -(NSInteger)index4IndexPath:(NSIndexPath *)indexPath{
     NSInteger index = 0;

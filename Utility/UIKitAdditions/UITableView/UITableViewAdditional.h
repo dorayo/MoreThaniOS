@@ -12,7 +12,7 @@
  *  UITableView的一个将IndexPath和Index相互转化的扩展
  */
 
-@interface UITableView (Addtional)
+@interface UITableView (Index)
 
 -(NSInteger)index4IndexPath:(NSIndexPath *)indexPath;
 
