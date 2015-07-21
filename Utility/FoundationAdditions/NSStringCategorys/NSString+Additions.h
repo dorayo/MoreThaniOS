@@ -22,6 +22,7 @@
 
 @interface NSString (FileName)
 - (NSString *)fileNameByAppend:(NSString *)append;
+@end
 
 #pragma mark - Personal Infos Validation
 
@@ -36,7 +37,4 @@ typedef NS_ENUM(NSInteger, MobilePhoneNumberType) {MobilePhoneNumberTypeCM=1, Mo
 // Email
 - (BOOL)isValidEmailAddress;
 @end
-
-@end
-
 
