@@ -12,14 +12,15 @@
 typedef NS_ENUM(NSUInteger, ImageType) {
     ImageTypePNG,
     ImageTypeJPG,
-    ImageTypeGIF
+    ImageTypeGIF,
+    ImageTypeCount
 };
 
-char *const kPngRangeValue = "bytes=16-23";
-char *const kJpgRangeValue = "bytes=0-209";
-char *const kGifRangeValue = "bytes=6-9";
+#define kPNGRangeValue  "bytes=16-23"
+#define kJPGRangeValue  "bytes=0-209";
+#define kGIFRangeValue = "bytes=6-9";
 
-char* kImageRangeValues[3] = {"bytes=16-23", "bytes=0-209", "bytes=6-9"};
+const char *kImageRangeValues[ImageTypeCount] = {kPNGRangeValue, kJPGRangeValue, kGIFRangeValue};
 
 
 
@@ -131,12 +132,21 @@ CGSize gifImageSizeWithHeaderData(NSData *data)
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:imageUrl];
         [request setValue:rangeValue forHTTPHeaderField:@"Range"];
         NSURLResponse *response;
         NSError *error;
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+        // 失败
+        if (error) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                failureHandler(error);
+            });
+            return;
+        }
+        
+        // 成功
         switch (type) {
             case ImageTypePNG:
             {
@@ -158,17 +168,9 @@ CGSize gifImageSizeWithHeaderData(NSData *data)
                 break;
         }
         
-        if (!error) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                successHandler(imageSize);
-            });
-        }else {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                failureHandler(error);
-            });
-        }
-        
-        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            successHandler(imageSize);
+        });
     });
 }
 
