@@ -1,5 +1,5 @@
 //
-//  WJImageSize.h
+//  MTImageSize.h
 //
 //  Created by weiji.info on 14-31-10.
 //  Copyright (c) 2014年 qingyun. All rights reserved.
@@ -19,7 +19,7 @@ CGSize jpgImageSizeWithHeaderData(NSData *data);
 CGSize gifImageSizeWithHeaderData(NSData *data);
 
 
-@interface WJImageSize : NSObject
+@interface MTImageSize : NSObject
 
 
 //根据url获取图片大小

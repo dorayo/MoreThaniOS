@@ -1,5 +1,5 @@
 //
-//  YMVersionCheck.h
+//  MTVersionCheck.h
 //  VersionCheckDemo
 //
 //  Created by dorayo on 15/6/2.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YMVersionCheck : NSObject
+@interface MTVersionCheck : NSObject
 
 + (void)operationOnVersion:(void (^) (BOOL isNewVersion))op;
 

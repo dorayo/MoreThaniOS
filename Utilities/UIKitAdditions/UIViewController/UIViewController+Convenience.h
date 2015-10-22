@@ -1,9 +1,6 @@
 //
 //  UIViewController+Convenience.h
-//  QYWeiBo
 //
-//  Created by qingyun on 15/7/4.
-//  Copyright (c) 2015年 河南青云. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

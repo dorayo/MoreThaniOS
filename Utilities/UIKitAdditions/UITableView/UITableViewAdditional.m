@@ -1,6 +1,5 @@
 //
 //  UITableViewAdditional.m
-//  iWeiBo
 //
 //  Created by jiwei on 14/12/4.
 //  Copyright (c) 2014年 weiji. All rights reserved.

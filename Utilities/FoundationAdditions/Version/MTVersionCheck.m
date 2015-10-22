@@ -1,14 +1,14 @@
 //
-//  YMVersionCheck.m
+//  MTVersionCheck.m
 //  VersionCheckDemo
 //
 //  Created by dorayo on 15/6/2.
 //  Copyright (c) 2015年 dorayo.com. All rights reserved.
 //
 
-#import "YMVersionCheck.h"
+#import "MTVersionCheck.h"
 
-@implementation YMVersionCheck
+@implementation MTVersionCheck
 
 + (void)operationOnVersion:(void (^)(BOOL))op
 {

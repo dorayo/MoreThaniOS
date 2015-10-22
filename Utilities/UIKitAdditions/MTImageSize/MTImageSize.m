@@ -1,12 +1,12 @@
 //
-//  WJImageSize.h
+//  MTImageSize.h
 //
 //  Created by weiji.info on 14-31-10.
 //  Copyright (c) 2014年 qingyun. All rights reserved.
 //
 
 
-#import "WJImageSize.h"
+#import "MTImageSize.h"
 
 
 typedef NS_ENUM(NSUInteger, ImageType) {
@@ -98,7 +98,7 @@ CGSize gifImageSizeWithHeaderData(NSData *data)
 }
 
 
-@implementation WJImageSize
+@implementation MTImageSize
 
 +(void)calculateImageSizeWithURLString:(NSString *)urlString success:(void (^)(CGSize imageSize))successHandler failure:(void(^)(NSError *error))failureHandler{
     
