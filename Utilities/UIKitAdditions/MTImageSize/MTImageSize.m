@@ -17,8 +17,8 @@ typedef NS_ENUM(NSUInteger, ImageType) {
 };
 
 #define kPNGRangeValue  "bytes=16-23"
-#define kJPGRangeValue  "bytes=0-209";
-#define kGIFRangeValue = "bytes=6-9";
+#define kJPGRangeValue  "bytes=0-209"
+#define kGIFRangeValue = "bytes=6-9"
 
 const char *kImageRangeValues[ImageTypeCount] = {kPNGRangeValue, kJPGRangeValue, kGIFRangeValue};
 
