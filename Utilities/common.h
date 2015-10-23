@@ -1,13 +1,6 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-// 00.封装NSLog
-#ifdef DEBUG // 调试版本
-#define MTLog(...) NSLog(__VA_ARGS__)
-#else // 发布版本
-#define MTLog(...) 
-#endif
-
 // 01.取出main bundle中的资源的路径
 #define ResourcePath(path)  [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path]
 
@@ -19,6 +12,11 @@
  */
 
 // 03.常用变量
+#ifdef DEBUG // 调试版本
+#define MTLog(...) NSLog(__VA_ARGS__)
+#else // 发布版本
+#define MTLog(...) 
+#endif
 #define MTDebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
 #define kTipAlert(s, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(s), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
 
@@ -38,7 +36,6 @@
 #define MTWeakSelf      MTWeak(self, __weakSelf);
 /** defines a strong `self` named `_self` from `__weakSelf` */
 #define MTStrongSelf    MTStrong(__weakSelf, _self);
-
 
 #define kKeyWindow [UIApplication sharedApplication].keyWindow
 #define kScreenBounds [UIScreen mainScreen].bounds
