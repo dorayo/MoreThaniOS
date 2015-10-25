@@ -38,6 +38,8 @@
 #define kVersionCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define kVersionBuildCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
 
+#define kHigher_iOS_8.3 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_3)
+
 // 1.5 其他UIKit相关
 #define RGB(A, B, C)  [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
 #define UI_NAVIGATION_BAR_HEIGHT    44
