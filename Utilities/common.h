@@ -25,7 +25,13 @@
 /** defines a strong `self` named `_self` from `__weakSelf` */
 #define MTStrongSelf    MTStrong(__weakSelf, _self);
 
-// 1.3 iPhone设备及屏幕适配
+// 1.3 版本
+#define kVersionCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+#define kVersionBuildCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
+
+#define kHigher_iOS_8.3 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_3)
+
+// 1.4 iPhone设备及屏幕适配
 #define kDevice_Is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kDevice_Is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -33,12 +39,6 @@
 #define kScreenBounds [UIScreen mainScreen].bounds
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
-
-// 1.4 版本
-#define kVersionCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
-#define kVersionBuildCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
-
-#define kHigher_iOS_8.3 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_3)
 
 // 1.5 其他UIKit相关
 #define RGB(A, B, C)  [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
