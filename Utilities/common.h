@@ -29,7 +29,7 @@
 #define kVersionCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define kVersionBuildCoding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
 
-#define kHigher_iOS_8.3 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_3)
+#define kHigher_iOS_8_3 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_3)
 
 // 1.4 iPhone设备及屏幕适配
 #define kDevice_Is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
