@@ -15,7 +15,6 @@
 
 // 1.2 weak or strong variable
 #define MTWeak(var, weakVar) __weak __typeof(&*var) weakVar = var
-#define MTWeak(var, weakVar) __weak __typeof(&*var) weakVar = var
 #define MTStrong_DoNotCheckNil(weakVar, _var) __typeof(&*weakVar) _var = weakVar
 #define MTStrong(weakVar, _var) MTStrong_DoNotCheckNil(weakVar, _var); if (!_var) return;
 
