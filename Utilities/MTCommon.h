@@ -8,7 +8,7 @@
 #else // 发布版本
 #define MTLog(...) 
 #endif
-#define MTDebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define MTDebugLog(s, ...) MTLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
 #define kTipAlert7(s, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(s), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
 #define kTipAlert(s, ...) {UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"                                                      message:[NSString stringWithFormat:(s), ##__VA_ARGS__]                                                       preferredStyle:UIAlertControllerStyleAlert];UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault                                                     handler:^(UIAlertAction * action) {}];[alert addAction:defaultAction];[self presentViewController:alert animated:YES completion:nil];}
 
