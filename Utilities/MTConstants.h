@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef MTCONSTANTS_H
+#define MTCONSTANTS_H
 
 // 1. 常用变量
 // 1.1 Log
